@@ -1,0 +1,260 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--color-green-light-1: #23ba71;
+	--color-green-light-2: #00a560;
+	--color-grey-light-1: #faf9f9;
+	--color-grey-light-2: #f4f2f2;
+	--color-grey-light-3: #f0eeee;
+	--color-grey-light-4: #ccc;
+	--color-grey-dark-1: #333;
+	--color-grey-dark-2: #777;
+	--color-grey-dark-3: #999;
+	--line: 2px solid var(--color-grey-light-1);
+	--banner-height: 60rem;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	width: 100%;
+	min-height: 100vh;
+	font-family: "Roboto","HelveticaNeue",sans-serif;
+	/*background-color: var(--color-green-light-1);*/
+	/*background-image: linear-gradient(to right bottom, var(--color-green-light-1), var(--color-green-light-2));*/
+}
+
+.overall-header {
+	/*position: fixed;
+	top: 0;*/
+	display: flex;
+	width: 100%;
+	background-color: var(--color-green-light-1);
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3)
+}
+.nav-brand {
+	padding: 2rem 2rem;
+	text-align: center;
+}
+.brand-image {
+	width: 5rem;
+	height: 5rem;
+}
+.navbar {
+	display: flex;
+	align-items: flex-end;
+	flex: 1;
+}
+.navbar-list {
+	display: flex;
+	margin-left: 3rem;
+	padding-bottom: 2rem;
+
+	font-size: 1.6rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	list-style: none;
+}
+.navbar-item {
+	position: relative;
+}
+.navbar-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 3px;
+	background-color: white;
+	transition: all 0.3s cubic-bezier(1, 0.01, 0, 0.98);
+}
+.navbar-item:hover::after {
+	width: 100%;
+}
+
+.navbar-item {
+	letter-spacing: 1px;
+}
+.navbar-item:not(:last-child) {
+	margin-right: 3rem;
+}
+.navbar-link {
+	display: flex;
+	text-decoration: none;
+	color: white;
+	outline: none;
+
+}
+@media (max-width: 768px) {
+	html {
+		font-size: 50%;
+	}
+	.overall-header {
+		flex-direction: column;
+	}
+	.nav-brand {
+		text-align: left;
+	}
+	.nav-brand > h1 {
+		display: none;
+	}
+}
+
+.main-content {
+	width: 100%;
+	
+}
+.banner {
+	background: url('../image/food_banner.jpg') no-repeat top center;
+	background-size: cover;
+	height: var(--banner-height);
+}
+.banner::before {
+	content: ' ';
+	position: absolute;
+	width: 100%;
+	height: var(--banner-height);
+	background: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 768px) {
+	:root {
+		--banner-height: 50rem;
+	}
+}
+.search-utility {
+	position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
+}
+.utility-heading {
+	font-size: 5rem;
+	color: white;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.global-search {
+	display: flex;
+	justify-content: center;
+	width: 70%;
+}
+.recipe-input {
+	width: 70%;
+	padding: 1rem 2rem;
+	outline: none;
+	border: none;
+	border-radius: 100px;
+	margin-right: -2.5rem;
+	background-color: var(--color-grey-light-2);
+	color: var(--color-grey-dark-2);
+}
+.search-button {
+	border: none;
+ 	background-color: transparent;
+ 	color: var(--color-grey-dark-2);
+}
+
+.recipe-input:focus, .recipe-input:focus + .search-button {
+	color: var(--color-grey-dark-1);
+}
+
+@media (max-width: 768px) {
+	.utility-heading {
+		font-size: 4rem;
+	}
+	.global-search {
+		width: 90%;
+	}
+} 
+
+.component {
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	padding: 3rem;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+}
+.component-header {
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
+	align-items: center;
+}
+.component-header > h1 {
+	font-size: 4rem;
+	margin: 2rem 1rem;
+}
+.component-extralink {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--color-green-light-2);
+
+}
+.component-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.component-article {
+	flex: 1;
+	max-width: 37.5%;
+	margin: 0 1rem;
+}
+.article-preview {
+	width: 100%;
+}
+.article-body {
+	margin-bottom: 1rem;
+}
+.article-title {
+	font-size: 2.5rem;
+}
+.article-body .description {
+	font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+	.component {
+		padding: 0;
+	}
+	.component-content {
+		flex-direction: column;
+	}
+	.component-article {
+		max-width: 100%;
+	}
+	.article-body {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+}
+.article-tag {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--color-green-light-1);
+	font-weight: 700;
+	font-size: 1.6rem;
+	display: block;
+	margin: 0.6rem 0;
+}
+.article-link {
+	text-decoration: none;
+	color: black;
+}
+.article-link:hover {
+	text-decoration: underline;
+}
+.article-link:hover, .article-link:visited {
+	color: grey;
+}
+.component-article_list {
+	flex: 1;
+}
