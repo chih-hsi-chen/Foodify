@@ -216,7 +216,7 @@ body {
 	max-width: 37.5%;
 	margin: 0 1rem;
 }
-.article-preview {
+.article-preview > * {
 	width: 100%;
 }
 .article-body {
