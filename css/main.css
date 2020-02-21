@@ -7,6 +7,8 @@
 :root {
 	--color-green-light-1: #23ba71;
 	--color-green-light-2: #00a560;
+	--color-green-light-3: #00a05a;
+	--color-green-light-4: #2abf76;
 	--color-grey-light-1: #faf9f9;
 	--color-grey-light-2: #f4f2f2;
 	--color-grey-light-3: #f0eeee;
@@ -14,7 +16,7 @@
 	--color-grey-dark-1: #333;
 	--color-grey-dark-2: #777;
 	--color-grey-dark-3: #999;
-	--line: 2px solid var(--color-grey-light-1);
+	--line: 2px solid var(--color-grey-light-4);
 	--banner-height: 60rem;
 }
 html {
@@ -33,7 +35,7 @@ body {
 	top: 0;*/
 	display: flex;
 	width: 100%;
-	background-color: var(--color-green-light-1);
+	background-color: var(--color-green-light-4);
 	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3)
 }
 .nav-brand {
@@ -257,4 +259,67 @@ body {
 }
 .component-article_list {
 	flex: 1;
+}
+
+.footer-container {
+	border-top: 1px solid var(--color-green-light-4);
+	background-color: var(--color-grey-light-2);
+	margin-top: 30px;
+	padding: 4rem 0 6rem 0;
+}
+.footer-home-link {
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 2rem;
+	text-align: center;
+}
+.footer-logo-img {
+	width: 20rem;
+}
+.footer-components {
+	display: flex;
+	max-width: 80%;
+	margin: 0 auto;
+}
+.footer-section {
+	flex: 1;
+	text-align: center;
+	padding: 2rem;
+}
+.footer-section:not(:last-child) {
+	border-right: var(--line);
+}
+.footer-section-title {
+	font-size: 2.5rem;
+	color: var(--color-grey-dark-1);
+	margin-bottom: 1rem;
+}
+.footer-section-content {
+	font-size: 1.5rem;
+	text-align: left;
+}
+.footer-section-list {
+	list-style: none;
+}
+.footer-innerlink {
+	text-decoration: none;
+	color: black;
+	font-size: 1.5rem;
+	display: block;
+	margin: 1rem 0;
+}
+.footer-innerlink:hover {
+	text-decoration: none;
+	color: var(--color-grey-dark-3);
+}
+
+@media (max-width: 768px) {
+	.footer-components {
+		flex-direction: column;
+		max-width: 60%;
+	}
+	.footer-section:not(:last-child) {
+		border-right: none;
+		border-bottom: var(--line);
+	}
 }
