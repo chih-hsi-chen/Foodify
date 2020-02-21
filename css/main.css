@@ -291,7 +291,7 @@ body {
 }
 .footer-section-title {
 	font-size: 2.5rem;
-	color: var(--color-grey-dark-1);
+	color: black;
 	margin-bottom: 1rem;
 }
 .footer-section-content {
@@ -304,7 +304,7 @@ body {
 .footer-innerlink {
 	text-decoration: none;
 	color: black;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	display: block;
 	margin: 1rem 0;
 }
