@@ -110,11 +110,17 @@ body {
 	width: 100%;
 	
 }
-.banner {
+.webp .banner {
+	background: url('../image/food_banner-min.webp') no-repeat top center;
+}
+.no-webp .banner {
 	background: url('../image/food_banner-min.jpg') no-repeat top center;
-	background-size: cover;
+}
+.banner {
+	background-size: cover !important;
 	height: var(--banner-height);
 }
+
 .banner::before {
 	content: ' ';
 	position: absolute;
